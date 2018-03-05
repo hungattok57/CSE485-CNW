@@ -1,0 +1,167 @@
+* {padding:0; margin: 0;}
+html,body{
+	width: 100%;
+	height:100%;
+}
+.menu .navbar-dark .navbar-nav .nav-link {
+	color: white;
+	transition: 0.4s;
+}
+.danhmuccon li{
+	text-align: center;
+	list-style: none;	
+}
+.danhmuccon li a{
+	text-decoration: none;
+	color: blue;
+}
+.danhmuccon li a:hover{
+	color:#d33333;
+}
+.menu .navbar-dark .navbar-nav .nav-link:hover{
+	color:#d33333;
+	transition: 0.4s;
+}
+.khoisanpham{
+	height:100%;
+	display: flex;
+	margin: 0;
+	padding:0;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.sanpham{
+	width: 16.5rem;
+	height: 150%;
+	margin-bottom: 1rem;
+	border: 1px solid white;
+	border-radius: 2%;
+	overflow: hidden;
+}
+.tieudesach{
+	color:#0275d8cc;
+	text-decoration: none;
+	transition: 0.4s;
+}
+.tieudesach:hover{
+	color:#c78b03cc;
+	transition: 0.4s;
+	text-decoration: none;
+}
+.sanpham:hover{
+border: 1px solid #d22121;
+}
+.khoinut{
+	padding-left:1rem;
+}
+.carousel.slide{
+	height:25rem;
+	overflow: hidden;
+}
+footer{
+	background-color:#373a3c;
+	width: 100%;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+h6{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	color:white;
+}/*
+<div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+        <div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+        <div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+        <div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+        <div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+        <div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+      </div>*/
+/*
+
+
+
+      <div class="col-sm-3 mt-1">
+        <h1 class="ml-2">Danh Mục</h1>
+        <ul class="danhmuccon">
+          <li><a href="#">Sách Kỹ Năng</a></li>
+          <li><a href="#">Sách Văn Học</a></li>
+          <li><a href="#">Sách Kinh Tế</a></li>
+          <li><a href="#">Tiểu Thuyết</a></li>
+          <li><a href="#">Sách Lịch Sử</a></li>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+        </ul>
+      </div> <!-- Hết phầ
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 khoisanpham float-sm-right mt-3">
+        <div class="sanpham">
+          <img src="images/1.png" class="img-fluid">
+          <h3><a href="#" class="tieudesach">Đảo hải tặc</a></h3>
+          <p>Đảo hải tặc là một bộ Anime Nhật Bản rất nổi tiếng</p>
+          <div class="khoinut">
+            <a href="#" class="btn btn-outline-success">Tải về</a>
+            <a href="#" class="btn btn-outline-primary">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Hết phần sản phẩm -->
+  </div>    
+</div> <!-- Hết phần nội dung chính -->
+
+</div>
+</div>*/
