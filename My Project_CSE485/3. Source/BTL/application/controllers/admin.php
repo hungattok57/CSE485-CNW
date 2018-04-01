@@ -121,9 +121,11 @@ public function admin_dir()
 {
 	// Load dữ liệu vào controllers
 	$this->load->model('admin_model');
+	// Load hàm xử lý show cm
 	$show=$this->admin_model->show_cm();
 		// Biến $show thành mảng
 	$dulieucm = array('dulieucm' =>$show );
+	// Truyền dữ liệu vào view
 	$this->load->view('admin_dir',$dulieucm);
 
 }
@@ -138,7 +140,7 @@ public function add_dir()
 	$ketqua=$this->admin_model->add_cm($tenchuyenmuc);
 	// Kiểm tra 
 	if ($ketqua) {
-		$this->load->view('add_dir_success');
+		$this->load->view('add_dir_success');// Load sang view
 	}
 	else{
 		echo "Thêm thất bại. Vui lòng kiểm tra lại code !";
@@ -153,7 +155,7 @@ public function delete($id)
 	$xoa=$this->admin_model->xoa($id);
 	// Kiểm tra
 	if ($xoa=1) {
-		$this->load->view('del_success');
+		$this->load->view('del_success'); // Load sang view
 	}
 }
 // Lấy vào dữ liệu sửa chuyên mục từ form
@@ -180,21 +182,21 @@ public function edit_dir()
 	$ketqua=$this->admin_model->dir_edit_act($id,$tenchuyenmuc);
 	// Kiểm tra
 	if ($ketqua=1) {
-		$this->load->view('edit_dir_success');
+		$this->load->view('edit_dir_success');// Load sang view
 	}
 	else{
 		echo "Lỗi rồi nhé !";
 	}
 }
 // Hàm xóa chuyên mục
-public function del_dir($id)
+public function del_dir($pt)
 {
 	// Lấy model
 	$this->load->model('admin_model');
 	// load hàm thực thi
-	$xoa=$this->admin_model->xoa($id);
+	$xoa=$this->admin_model->xoa($pt);
 	if ($xoa=1) {
-		$this->load->view('del_success');
+		$this->load->view('del_success'); // TRuyền sang view
 	}
 }
 // Hàm xử lý đăng nhập
