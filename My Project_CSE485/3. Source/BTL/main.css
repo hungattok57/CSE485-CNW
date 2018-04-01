@@ -1,0 +1,152 @@
+* {padding:0; margin: 0;}
+html,body{
+	width: 100%;
+	height:100%;
+}
+.menu .navbar-dark .navbar-nav .nav-link {
+	color: white;
+	transition: 0.4s;
+}
+.danhmuccon li{
+	text-align: center;
+	list-style: none;	
+}
+.danhmuccon li a{
+	text-decoration: none;
+	color: blue;
+}
+.danhmuccon li a:hover{
+	color:#d33333;
+}
+.menu .navbar-dark .navbar-nav .nav-link:hover{
+	color:#d33333;
+	transition: 0.4s;
+}
+div.khoisanpham{
+	width: 100%;
+	height:100%;
+	margin-right: 0; 
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.sanpham{
+	width: 16.5rem;
+	height: 150%;
+	margin-bottom: 1rem;
+	border: 1px solid white;
+	border-radius: 2%;
+	overflow: hidden;
+}
+.tieudesach{
+	color:#0275d8cc;
+	text-decoration: none;
+	transition: 0.4s;
+}
+.tieudesach:hover{
+	color:#c78b03cc;
+	transition: 0.4s;
+	text-decoration: none;
+}
+.sanpham:hover{
+	border: 1px solid #d22121;
+}
+.khoinut{
+	padding-left:1rem;
+	margin-bottom: .5rem;
+	text-align: center;
+}
+.carousel.slide{
+	height:25rem;
+	overflow: hidden;
+}
+footer{
+	background-color:#373a3c;
+	width: 100%;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+h6{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	color:white;
+}
+ul.ds_sach{
+	list-style: none;
+}
+ul.ds_sach:hover{
+	border-color: #D33333;
+	transition: 0.3s;
+}
+ul.ds_sach li{
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+}
+
+a.taive{
+	text-decoration: none;
+}
+.khoisach{
+	border: 1px solid #eee;
+	border-radius: 10px;
+	position: relative;
+	width: 195px;
+	height:400px;
+	margin-right:17px;
+	margin-bottom: 10px;
+}
+.khoisach:nth-child(4){
+	margin-right: 0;
+}
+.khoisach:hover{
+	border-color: #D33333;
+	transition: 0.4s;
+}
+.khoisach img{
+	width: 100%;
+	height: 205px;
+	border-top-left-radius: 10px;	
+	border-top-right-radius: 10px;	
+}
+.khoisach button.btn-success{
+	position: absolute;
+	bottom: 5px;
+	left:10px;
+}
+.khoisach button.btn-success a{
+	color: white;
+}
+.khoisach button.btn-outline-secondary{
+	position: absolute;
+	bottom: 5px;
+	left:100px;
+}
+.khoisach .ten_sach{
+	padding-left: 0.5rem;
+	padding-right: 0.2rem;
+	font-size: 21px;
+}
+.khoisach p{
+	padding-left: 0.5rem;
+	padding-right: 0.2rem;
+}
+.anh_ds_sach{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.ds_sach_admin{
+	height: 500px;
+	overflow-y: scroll;
+}
+#formlogin{
+	width:100%;
+	margin:auto;
+}
