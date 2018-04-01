@@ -9,8 +9,10 @@ class admin_model extends CI_Model {
 		parent::__construct();
 		
 	}
+	// Hàm xử lý thêm sách
 	public function add_books($tensach,$tacgia,$tenchuyenmuc,$trichdan,$gioithieu,$anhsach,$filesach)
 	{
+		// Gán dữ liệu lấy từ view thành mảng
 		$dulieu = array(
 			'tensach' =>$tensach ,
 			'tacgia' =>$tacgia ,
@@ -20,21 +22,25 @@ class admin_model extends CI_Model {
 			'anhsach' =>$anhsach ,
 			'filesach' =>$filesach
 		);
+		// Hàm xử lý insert
 		$this->db->insert('sach', $dulieu);   
 		return $this->db->insert_id();
 	}
+	// Hàm hiện thị sách
 	public function show()
 	{
 		$this->db->select('*');
-		$this->db->order_by('id','desc');
+		$this->db->order_by('id','desc'); // Xắp xếp
 		$show=$this->db->get('sach');
-		$show=$show->result_array();
+		$show=$show->result_array();// Biến $show thành mảng
 		return $show;
 	}
+	// Hàm xóa sách
 	public function delete($id)
 	{
 		$this->db->where('id', $id);
 	}
+	// Hàm show chuyên mục
 	public function show_cm()
 	{
 		$this->db->select('*');
@@ -43,6 +49,7 @@ class admin_model extends CI_Model {
 		$show=$show->result_array();
 		return $show;
 	}
+	// Hàm thêm chuyên mục
 	public function add_cm($tenchuyenmuc)
 	{
 		$chuyenmuc= array('tenchuyenmuc' =>$tenchuyenmuc );
@@ -50,6 +57,7 @@ class admin_model extends CI_Model {
 		return $this->db->insert_id();
 
 	}
+	// Lấy về dữ liệu để sửa
 	public function getData($id)
 	{
 		$this->db->select('*');
@@ -58,6 +66,7 @@ class admin_model extends CI_Model {
 		$dulieu=$dulieu->result_array();
 		return $dulieu;
 	}
+	// Hàm sửa sách
 	public function book_edit($id,$ten,$tacgia,$chuyenmuc,$trichdan,$gioithieu,$anhsach,$filesach)
 	{
 		$dulieu = array(
@@ -74,12 +83,14 @@ class admin_model extends CI_Model {
 		$this->db->update('sach', $dulieu);
 		return 1;
 	}
+	// Hàm xóa sách
 	public function xoa($id)
 	{
 		$this->db->where('id', $id);
 		$this->db->delete('sach');
 		return 1;
 	}
+	// Lấy vào id chuyên mục để sửa
 	public function dir_edit_show($id)
 	{
 		$this->db->select('*');
@@ -89,6 +100,7 @@ class admin_model extends CI_Model {
 		return $dulieu;
 
 	}
+	// Hàm sửa chuyên mục
 	public function dir_edit_act($id,$tenchuyenmuc)
 	{
 		$object= array('id' => $id ,'tenchuyenmuc' => $tenchuyenmuc );
@@ -96,13 +108,38 @@ class admin_model extends CI_Model {
 		$ketqua=$this->db->update('chuyenmuc', $object);
 		return 1;
 	}
+	// Hàm xóa chuyên mục
 	public function xoa_dir($id)
 	{
 		$this->db->where('id', $id);
 		$this->db->delete('chuyenmuc');
 		return 1;
 	}
+	// Hàm checklogin
+	public function cklogin($ten,$pass)
+	{
+		$dulieu=array('id' => '1',
+			'ten' =>$ten ,
+			'password' => $pass );
+		$ten0=$dulieu['ten'];
+		$pass0=$dulieu['password'];
+		$this->db->select('*');
+		$ketqua=$this->db->get('user');
+		$ketqua=$ketqua->result_array();
+	foreach ($ketqua as $key => $value) {
+		$ten1=$value['ten'];
+		$pass1=$value['password'];
+	}
+	$check=0;
+	if ($ten0==$ten1 && $pass0==$pass1) {
+		$check=1;
+	}
+	else {
+		$check=0;
+	}
+	return $check;
+}
 }
 
-/* End of file admin_model.php */
+	/* End of file admin_model.php */
 /* Location: ./application/models/admin_model.php */

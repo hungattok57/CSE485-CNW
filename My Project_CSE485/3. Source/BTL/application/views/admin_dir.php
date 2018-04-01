@@ -14,6 +14,8 @@
 <body>
 	<div class="ndquantri">
 		<div class="container">
+			<a href="<?php echo base_url() ?>index.php/admin" class="btn btn-outline-success mt-2">Quản lý sách</a>
+			<hr>
 			<h3>Danh sách các chuyên mục sách: </h3>
 			<hr>
 			<ul class="list-group  ds_dir_admin">

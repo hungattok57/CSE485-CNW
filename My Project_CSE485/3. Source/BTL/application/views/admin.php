@@ -14,6 +14,8 @@
 <body>
 	<div class="ndquantri">
 		<div class="container">
+			<a href="<?php echo base_url() ?>index.php/admin/admin_dir" class="btn btn-outline-success mt-2">Quản lý chuyên mục</a>
+			<hr>
 			<h3>Danh sách các đầu sách :</h3>
 			<hr>
 			<ul class="list-group  ds_sach_admin">
@@ -26,9 +28,10 @@
 						
 					</li>
 				<?php endforeach ?>
-			</ul>
+			</ul> <!-- Hết danh sách đầu sách -->
 
 			<hr>
+			<!-- Thêm sách -->
 			<div class="row mt-2">
 				<div class="col-sm-8">
 					<h3 class="text-xs-center">Thêm Sách Mới</h3>
@@ -89,7 +92,7 @@
 							</div>
 						</div>
 					</form>
-				</div> <!-- Hết phần Form Thêm -->
+				</div> <!-- Hết phần Form Thêm sách -->
 			</div>			
 		</div>
 	</div>

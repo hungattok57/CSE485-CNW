@@ -6,6 +6,7 @@ class Edit_sach extends CI_Controller {
 	{
 		parent::__construct();
 	}
+	// Hàm lấy vào thông tin sách
 
 	public function book($id)
 {

@@ -22,19 +22,16 @@
           &#9776;
         </button>
         <div class="collapse navbar-toggleable-xs" id="menu">
-          <a class="navbar-brand tieude" href="#">Thư Viện Miễn Phí</a>
+          <a class="navbar-brand tieude" href="<?php echo base_url() ?>index.php/home">Thư Viện Miễn Phí</a>
           <ul class="nav navbar-nav float-sm-right menuphai pr-3">
             <li class="nav-item">
-              <a class="nav-link" href="Index.html">Home</a>
+              <a class="nav-link" href="<?php echo base_url() ?>index.php/home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Giới thiệu</a>
+              <a class="nav-link" href="<?php echo base_url() ?>index.php/home/gioithieu">Giới thiệu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="service.html">Dịch vụ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Liên hệ</a>
+              <a class="nav-link" href="<?php echo base_url() ?>index.php/home/contact">Liên hệ</a>
             </li>
           </ul>
         </div>
@@ -49,11 +46,9 @@
       <div class="col-sm-3 mt-1">
        <h1 class="ml-2">Danh Mục</h1>
        <ul class="danhmuccon">
-        <li><a href="#">Sách Kỹ Năng</a></li>
-        <li><a href="#">Sách Văn Học</a></li>
-        <li><a href="#">Sách Kinh Tế</a></li>
-        <li><a href="#">Tiểu Thuyết</a></li>
-        <li><a href="#">Sách Lịch Sử</a></li>
+        <?php foreach ($dulieucm as $k => $v): ?>
+          <li><a href="<?php echo base_url() ?>/index.php/view_cm/detail_cm/<?php echo $v['tenchuyenmuc'] ?>"><?php echo $v['tenchuyenmuc'] ?></a></li>
+        <?php endforeach ?>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -98,7 +93,7 @@
           <p><?php echo $value['trichdan'] ?></p>
           <button class="btn btn-success"><a class="taive" href="<?php echo $value['filesach'] ?>">Tải về</a>
           </button>
-          <button class="btn btn-outline-secondary"><a class="taive" href="<?php echo $value['filesach'] ?>">Chi tiết</a>
+          <button class="btn btn-outline-secondary"><a class="taive" href="<?php echo base_url() ?>index.php/home/view_sp/<?php echo $value['id'] ?>">Chi tiết</a>
           </button>
         </div>
       <?php endforeach ?>

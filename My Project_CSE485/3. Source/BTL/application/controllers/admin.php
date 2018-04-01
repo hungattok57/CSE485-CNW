@@ -130,10 +130,13 @@ public function admin_dir()
 
 public function add_dir()
 {
-	
+	// Lấy tên chuyên mục từ form
 	$tenchuyenmuc=$this->input->post('tenchuyenmuc');
+	// Load model xử lý
 	$this->load->model('admin_model');
+	// Gọi hàm xử lý trong model
 	$ketqua=$this->admin_model->add_cm($tenchuyenmuc);
+	// Kiểm tra 
 	if ($ketqua) {
 		$this->load->view('add_dir_success');
 	}
@@ -141,27 +144,41 @@ public function add_dir()
 		echo "Thêm thất bại. Vui lòng kiểm tra lại code !";
 	}
 }
+// Xóa sách
 public function delete($id)
 {
+	// Load model 
 	$this->load->model('admin_model');
+	// Load hàm xử lý xóa sách
 	$xoa=$this->admin_model->xoa($id);
+	// Kiểm tra
 	if ($xoa=1) {
 		$this->load->view('del_success');
 	}
 }
+// Lấy vào dữ liệu sửa chuyên mục từ form
 public function edit_dir_in($id)
 {
+	// Load model 
 	$this->load->model('admin_model');
+	// Load hàm xử lý
 	$dulieu=$this->admin_model->dir_edit_show($id);
+	// Biến $dulieu thành mảng
 	$dulieu= array('dulieucmedit' => $dulieu);
+	// Truyền $dulieu vào view
 	$this->load->view('admin_dir_edit',$dulieu);
 }
+// Hàm thực thi sửa chuyên mục
 public function edit_dir()
 {
+	// Lấy dữ liệu từ form
 	$id=$this->input->post('id');
 	$tenchuyenmuc=$this->input->post('tenchuyenmuc');
+	// Load model
 	$this->load->model('admin_model');
+	// Load hàm xử lý
 	$ketqua=$this->admin_model->dir_edit_act($id,$tenchuyenmuc);
+	// Kiểm tra
 	if ($ketqua=1) {
 		$this->load->view('edit_dir_success');
 	}
@@ -169,17 +186,43 @@ public function edit_dir()
 		echo "Lỗi rồi nhé !";
 	}
 }
+// Hàm xóa chuyên mục
 public function del_dir($id)
 {
+	// Lấy model
 	$this->load->model('admin_model');
+	// load hàm thực thi
 	$xoa=$this->admin_model->xoa($id);
 	if ($xoa=1) {
 		$this->load->view('del_success');
 	}
 }
+// Hàm xử lý đăng nhập
 public function login()
 {
 	$this->load->view('login');
+}
+public function login_act()
+{
+	// Lấy dữ liệu từ form đăng nhập
+	$ten=$this->input->post('ten');
+	$pass=$this->input->post('pass');
+	// Load model và hàm thực thi
+	$this->load->model('admin_model');
+	$ketqua=$this->admin_model->cklogin($ten,$pass);
+	// var_dump($ketqua);
+	if ($ketqua==1) {
+		// $array = array(
+		// 	'ten' => $ten,
+		// 	'password' => $pass,
+		// );
+		
+		// $this->session->set_userdata( $array );
+	}
+	else{
+		echo "Đăng nhập thất bại";
+	}
+	
 }
 }
 /* End of file admin.php */

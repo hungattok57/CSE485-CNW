@@ -16,24 +16,26 @@
 			<div class="col-md-4 col-center-block login-widget" id="formlogin" style="width: 100%;margin: auto;"> 
 				<h1 class="text-center"><i class="fa fa-dot-circle-o"></i>ADMIN
 				</h1> 
-				<div> 
-					<div class="form-group"> 
-						<div class="input-group"> 
-							<div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
-							</div> <input class="form-control" placeholder="hocwebgiare@gmail.com" type="text"> 
+				<form action="<?php echo base_url() ?>index.php/admin/login_act" enctype="multipart/form-data" method="post">
+					<div> 
+						<div class="form-group"> 
+							<div class="input-group"> 
+								<div class="input-group-addon"><i class="fa fa-user fa-fw"></i>
+								</div> <input name="ten" class="form-control" placeholder="huynv" type="text"> 
+							</div> 
+						</div> 
+						<div class="form-group"> 
+							<div class="input-group"> 
+								<div class="input-group-addon"><i class="fa fa-key fa-fw"></i>
+								</div> <input name="pass" class="form-control" placeholder="******" type="password"> 
+							</div> 
+						</div> 
+						<div class="form-group"> 
+							<button type="submit" class="btn btn-primary btn-block">Đăng nhập</button> 
 						</div> 
 					</div> 
-					<div class="form-group"> 
-						<div class="input-group"> 
-							<div class="input-group-addon"><i class="fa fa-key fa-fw"></i>
-							</div> <input class="form-control" placeholder="******" type="password"> 
-						</div> 
-					</div> 
-					<div class="form-group"> 
-						<button type="submit" class="btn btn-primary btn-block">Đăng nhập</button> 
-					</div> 
-				</div> 
-			</div> 
+				</form>
+			</div><!--  Hết form đăng nhập -->
 		</div>
 	</div>
 </body>

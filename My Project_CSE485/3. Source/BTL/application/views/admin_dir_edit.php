@@ -14,6 +14,8 @@
 <body>
 	<div class="container">
 		<div class="col-sm-8">
+			<a href="<?php echo base_url() ?>index.php/admin" class="btn btn-outline-success">Quản lý sach</a>
+			<hr>
 			<?php foreach ($dulieucmedit as $key => $value): ?>
 				<form action="<?php echo base_url() ?>/index.php/admin/edit_dir" method="post" enctype="multipart/form-data">			
 					<h3 class="text-xs-center">Cập nhật chuyên mục: </h3>
