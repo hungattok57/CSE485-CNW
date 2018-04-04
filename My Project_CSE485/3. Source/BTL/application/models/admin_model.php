@@ -30,7 +30,7 @@ class admin_model extends CI_Model {
 	public function show()
 	{
 		$this->db->select('*');
-		$this->db->order_by('id','desc'); // Xắp xếp
+		$this->db->order_by('id','desc'); // Sắp xếp
 		$show=$this->db->get('sach');
 		$show=$show->result_array();// Biến $show thành mảng
 		return $show;
@@ -46,17 +46,19 @@ class admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->order_by('id','desc');
 		$show=$this->db->get('chuyenmuc');
+		//Select from db theo id và thứ tự desc, get chuyên mục from db, trả về một mảng
 		$show=$show->result_array();
 		return $show;
 	}
 	// Hàm thêm chuyên mục
 	public function add_cm($tenchuyenmuc)
 	{
+		//Truyền vào biến $tenchuyenmuc, tạo 1 mảng có key là tenchuyenmuc trùng với tên trường trong CSDL và value là biến $tenchuyenmuc truyền vào
 		$chuyenmuc= array('tenchuyenmuc' =>$tenchuyenmuc );
-		$this->db->insert('chuyenmuc', $chuyenmuc);   
-		return $this->db->insert_id();
-
-	}
+		$this->db->insert('chuyenmuc', $chuyenmuc);
+		//Insert mảng ở trên vào bảng chuyenmuc trong  CSDL  
+		return $this->db->insert_id(); 
+		}
 	// Lấy về dữ liệu để sửa
 	public function getData($id)
 	{
